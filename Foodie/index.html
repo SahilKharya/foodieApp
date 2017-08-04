@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--'ng-app'  attribute tells angular that everything inside this tag is now Angular's responsibility. So ng-app is the entry of angular in the page-->
+<html lang="en" ng-app='foodieApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodie</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.5/angular-route.js"></script>
+</head>
+
+<body id="app">
+<div ng-view=""></div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

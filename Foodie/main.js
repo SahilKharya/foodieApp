@@ -1,4 +1,23 @@
-var foodieApp = angular.module('foodieApp',[]);
+/*We are storing the value returned by the angular.module() function here
+The first argument in function is the name of the app we mentioned in 'ng-app' directive
+The second parameter is an array of 'extra powers' we want to add to our app*/
+var foodieApp = angular.module('foodieApp',['ngRoute']);   //A module contains the different components of an AngularJS app
+
+/* .config() is a function that allows us to set-up our app in some way. '$routeProvider' is an object defined in ngRoute, it allows us to set-up routes */
+foodieApp.config(function ($routeProvider) {
+	$routeProvider
+	.when('/',{                            //  '/' means the root route
+		templateUrl: 'pages/login.html',   //URL of the route, The place where we have the template/view saved
+		controller: 'loginController'      //The controller to use with that view
+	})
+	.when('/home',{                        // '/home' is anothr route
+		templateUrl: 'pages/main.html',
+		controller: 'mainController'
+	})
+})
+
+//"mainController" -name of the controller we want to create inside variable 'foodieApp', we are passing function which the controller will do.
+//A controller manages the app's data
 foodieApp.controller('mainController',function($scope) {
     //$scope is an object to which we can add a list of properties and functions
     // the prop. or function which are present in html file can be accessed though '$scope.property' and $scope can be used inside the controller in which it is defined.
@@ -63,4 +82,7 @@ foodieApp.controller('mainController',function($scope) {
         hours: '10 AM to 11 PM (Mon-Sun)',
         image: 'https://b.zmtcdn.com/data/pictures/3/1401633/f076bdb7e3fda3a87ba182207862632c.jpg'
     }]
+})
+
+foodieApp.controller('loginController',function($scope) {
 })
