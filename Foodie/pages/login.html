@@ -4,8 +4,8 @@
             <form name="loginForm">
                 <div class="form-group">
                     <label for="user-email">Email address</label>
-                    <!-- a model in Angular can be considered as a variable(JS) with more power(functioning) 
-model can be used to provide the value to all the places it is used at.  model is used as a data binding in which a value can be used by writing model within two curly braces {{}} 
+                    <!-- a model in Angular can be considered as a variable(JS) with more power(functioning)
+model can be used to provide the value to all the places it is used at.  model is used as a data binding in which a value can be used by writing model within two curly braces {{}}
 label and input r connected internally by giving same value/name to the  'for' in label as the value of 'id' of input-->
                     <input type="email" class="form-control" id="user-email" placeholder="Email" name="email" ng-model="user.email" required="">
                     <!--working of ng-show attribute -
@@ -18,18 +18,19 @@ label and input r connected internally by giving same value/name to the  'for' i
                     <label for="user-password">Password</label>
                     <input type="password" class="form-control" id="user-password" placeholder="Password" name="password" required="" ng-model="user.password" ng-minlength="6" ng-maxlength="15">
                     <div ng-show="loginForm.password.$error.minlength">
-                    Password must be at least 6 characters long 
+                    Password must be at least 6 characters long
                     </div>
                     <div ng-show="loginForm.password.$error.maxlength">
-                    Password must be at most 15 characters long 
+                    Password must be at most 15 characters long
                     </div>
                     <div ng-show="loginForm.password.$error.required">
-                    Please enter your password 
+                    Please enter your password
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid">Login</button>
-                <!-- adds the attribute of 'disabled' to the button when the condition inside the quote is true-->
+                <button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid" ng-click="goToHome()">Login</button>
+                <!-- adds the attribute of 'disabled' to the button when the condition inside the quote is true
+              'ng-click' Angular JS calls the 'goToHome' function when clicked on the button -->
             </form>
         </div>
 
-    </div> 
+    </div>

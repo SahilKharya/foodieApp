@@ -14,10 +14,12 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Order Online</a></li>
-                </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/home">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a>Order Online</a></li>
+                <li><a href="#!/">Logout</a></li>
+              </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -30,26 +32,26 @@
         <div class="search-bar">
             <form>
             <div class="input-wrapper">
-                <input type="text" class="form-control" placeholder="Search..." ng-model="query"><!-- model "query" used as a filter to search in the restaurent div --> 
+                <input type="text" class="form-control" placeholder="Search..." ng-model="query"><!-- model "query" used as a filter to search in the restaurent div -->
             </div>
             <button type="submit" class="btn btn-default">Search</button>
           </form>
         </div>
         <div ng-repeat="restaurant in restaurants | filter:query" class="restaurant">
-            <!-- 'restaurant' is a temporary variable that is being created 
+            <!-- 'restaurant' is a temporary variable that is being created
             ng-repeat act as a 'for loop'. for each iteration of the loop, it has the value of one element{object} in the array
             'filter:query' we are specifying the name of the model after colon where the user will type the search Query
             It takes the list of restaurants and only displays those that match the user's query  -->
             <div class="rest-wrapper">
                 <div class="image">
-                    <img src="{{restaurant.image}}" height="100" width="100">
+                    <img ng-src="{{restaurant.image}}" height="100" width="100">
                 </div>
                 <div class="rest-info">
                     <div class="rest-category">
                        <small>{{restaurant.category}} </small>
                     </div>
                     <div class="rest-name">
-                    <strong>{{restaurant.name}}</strong>
+                        <a ng-href="#!/restaurant/{{restaurant.id}}"><strong>{{restaurant.name}}</strong></a>
                     </div>
                     <div>
                        <strong> {{restaurant.location}}</strong>
