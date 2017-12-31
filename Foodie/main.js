@@ -6,11 +6,11 @@ var foodieApp = angular.module('foodieApp',['ngRoute']);   //A module contains t
 /* .config() is a function that allows us to set-up our app in some way. '$routeProvider' is an object defined in ngRoute, it allows us to set-up routes */
 foodieApp.config(function ($routeProvider) {
 	$routeProvider
-	.when('/',{                            //  '/' means the root route
+	.when('/home',{                            //  '/' means the root route
 		templateUrl: 'pages/login.html',   //URL of the route, The place where we have the template/view saved
 		controller: 'loginController'      //The controller to use with that view
 	})
-	.when('/home',{                        // '/home' is anothr route
+	.when('/',{                        // '/home' is anothr route
 		templateUrl: 'pages/main.html',
 		controller: 'mainController'
 	})
